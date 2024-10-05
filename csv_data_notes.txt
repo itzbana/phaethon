@@ -1,4 +1,6 @@
+data from nasa's resources (Small-Body Database Query)
 
+elemnts:
 object fullname - full_name
 SPK-ID - spkid
 orbit ID - orbit_id
