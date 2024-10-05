@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import newton
 import random
+import requests
 import plotly.graph_objects as go
 import dash
 from dash import dcc, html
@@ -44,9 +45,13 @@ def compute_heliocentric_xyz_vectorized(df):
     
     return x, y, z
 
-# Load data
-url = 'https://raw.githubusercontent.com/itzbana/phaethon/refs/heads/main/sbdb_query_results.csv'
-df = pd.read_csv(url)
+# Load data from the provided JSON URL
+url = 'https://raw.githubusercontent.com/itzbana/phaethon/refs/heads/main/csvtojson.json'
+response = requests.get(url)
+data = response.json()
+
+# Convert the JSON data to a DataFrame
+df = pd.DataFrame(data)
 
 # Compute coordinates
 x_coords, y_coords, z_coords = compute_heliocentric_xyz_vectorized(df)
@@ -67,7 +72,7 @@ for index, row in df.iterrows():
 
 # Earth's coordinates and hover text
 earth_x, earth_y, earth_z = 0, 0, 0  # Earth's position
-earth_hover_text = "Earth<br>True Anomaly: 0.00 degrees<br>Eccentricity: 0.0167"  # Earth's data
+earth_hover_text = "Earth<br>True Anomaly: 0.00 degrees<brEccentricity: 0.0167"  # Earth's data
 
 # Create a 3D scatter plot with Plotly
 fig = go.Figure(data=[go.Scatter3d(
