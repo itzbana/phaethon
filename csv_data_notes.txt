@@ -1,0 +1,16 @@
+
+object fullname - full_name
+SPK-ID - spkid
+orbit ID - orbit_id
+a 
+e 
+i 
+q 
+Q - ad
+node  - om
+peri - w
+M - ma
+n 
+tp 
+NEO 
+PHA 
