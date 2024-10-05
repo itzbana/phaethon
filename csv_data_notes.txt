@@ -1,5 +1,12 @@
 data from nasa's resources (Small-Body Database Query)
 
+object group:	all objects
+object kind:	all objects
+numbered state:	numbered unnumbered
+comet fragments:	exclude comet fragments
+
+Asteroid Orbit Classes: only apollo
+
 elemnts:
 object fullname - full_name
 SPK-ID - spkid
